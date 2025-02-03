@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Clothing Shop</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    
+</head>
+<body>
+    <header>
+        <h1>Online Clothing Shop</h1>
+        <nav>
+            <ul>
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#cart" class="nav-link">Cart</a></li>
+                <li><a href="#how-to-order" class="nav-link">How to Order</a></li>
+                <li><a href="#collection" class="nav-link">Collection</a></li>
+                <li><a href="#about" class="nav-link">About Us</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h2>Welcome to Our Online Shop</h2>
+        <p>Discover the latest trends in fashion and elevate your wardrobe with our wide selection of clothing.</p>
+    </section>
+
+
+    <section id="how-to-order">
+        <h2>How to Order</h2>
+        <p>Ordering from our Online Clothing Shop is simple:</p>
+        <ol>
+            <li>Browse our collection above to choose your favorite items.</li>
+            <li>Add items to your cart using the "Add to Cart" button.</li>
+            <li>Go to the Cart section to review your selections.</li>
+            <li>Click on "Proceed to Checkout" to fill in your delivery information.</li>
+            <li>Confirm your order and enjoy your new clothing!</li>
+        </ol>
+    </section>
+
+    <section id="collection">
+        <h2>Our Collection</h2>
+        <div class="menu-item">
+            <img src="t-shirt.jpg" alt="T-Shirt" class="menu-image">
+            <h3>Casual T-Shirt</h3>
+            <p>Comfortable and stylish t-shirt for everyday wear.</p>
+            <p>Price: $19.99</p>
+            <label for="quantity-tshirt">Quantity:</label>
+            <input type="number" id="quantity-tshirt" min="1" value="1">
+            <button onclick="addToCart('Casual T-Shirt', 19.99, document.getElementById('quantity-tshirt').value, 't-shirt.jpg')">Add to Cart</button>
+        </div>
+        <div class="menu-item">
+            <img src="jeans.jpg" alt="Jeans" class="menu-image">
+            <h3>Denim Jeans</h3>
+            <p>Classic blue denim jeans that never go out of style.</p>
+            <p>Price: $39.99</p>
+            <label for="quantity-jeans">Quantity:</label>
+            <input type="number" id="quantity-jeans" min="1" value="1">
+            <button onclick="addToCart('Denim Jeans', 39.99, document.getElementById('quantity-jeans').value, 'jeans.jpg')">Add to Cart</button>
+        </div>
+        <div class="menu-item">
+            <img src="jacket.jpg" alt="Jacket" class="menu-image">
+            <h3>Stylish Jacket</h3>
+            <p>Keep warm and trendy with our stylish jacket.</p>
+            <p>Price: $49.99</p>
+            <label for="quantity-jacket">Quantity:</label>
+            <input type="number" id="quantity-jacket" min="1" value="1">
+            <button onclick="addToCart('Stylish Jacket', 49.99, document.getElementById('quantity-jacket').value, 'jacket.jpg')">Add to Cart</button>
+        </div>
+        <div class="menu-item">
+            <img src="dress.jpg" alt="Dress" class="menu-image">
+            <h3>Elegant Dress</h3>
+            <p>Perfect for special occasions, our elegant dress will make you shine.</p>
+            <p>Price: $59.99</p>
+            <label for="quantity-dress">Quantity:</label>
+            <input type="number" id="quantity-dress" min="1" value="1">
+            <button onclick="addToCart('Elegant Dress', 59.99, document.getElementById('quantity-dress').value, 'dress.jpg')">Add to Cart</button>
+        </div>
+        <div class="menu-item">
+            <img src="shoes.jpg" alt="Shoes" class="menu-image">
+            <h3>Fashionable Shoes</h3>
+            <p>Step out in style with our latest fashionable shoes.</p>
+            <p>Price: $69.99</p>
+            <label for="quantity-shoes">Quantity:</label>
+            <input type="number" id="quantity-shoes" min="1" value="1">
+            <button onclick="addToCart('Fashionable Shoes', 69.99, document.getElementById('quantity-shoes').value, 'shoes.jpg')">Add to Cart</button>
+        </div>
+        <div class="menu-item">
+            <img src="sweater.jpg" alt="Sweater" class="menu-image">
+            <h3>Cozy Sweater</h3>
+            <p>Stay warm with our cozy and comfortable sweater.</p>
+            <p>Price: $29.99</p>
+            <label for="quantity-sweater">Quantity:</label>
+            <input type="number" id="quantity-sweater" min="1" value="1">
+            <button onclick="addToCart('Cozy Sweater', 29.99, document.getElementById('quantity-sweater').value, 'sweater.jpg')">Add to Cart</button>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>At Online Clothing Shop, we are dedicated to bringing the latest fashion trends to you. Our team is passionate about clothing and believes that style should be accessible to everyone.</p>
+        <p>We curate our collections with high-quality materials and designs that cater to diverse tastes and preferences. Whether you're dressing up for a special event or looking for everyday wear, we have something for you!</p>
+    </section>
+
+    <section id="cart">
+        <h2>Your Cart</h2>
+        <div id="cart-items"></div>
+        <button id="checkout-btn" onclick="checkout()">Proceed to Checkout</button>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form id="contact-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Online Clothing Shop. All rights reserved.</p>
+    </footer>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h3 id="modal-title"></h3>
+            <p id="modal-description"></p>
+        </div>
+    </div>
+
+    
+</body>
+</html>
